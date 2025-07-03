@@ -1,0 +1,12 @@
+# Define os serviços (contêineres) que compõem sua aplicação
+services:
+  # Serviço da sua aplicação principal
+  app:
+    build:
+      context: . # Constrói a imagem a partir do Dockerfile no diretório atual
+      dockerfile: Dockerfile
+    container_name: minha-app
+    ports:
+      - "8000:8000" # Expõe a porta 8000 do contêiner para a porta 8000 do host
+    volumes:
+      - .:/app # Monta o diretório ./app do host no contêiner
